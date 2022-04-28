@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main :: layout(~{::main})}">
+
+<body>
+
+<main role="main">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 py-4">
+                <h2>Employee Info</h2>
+                <form action="#" th:replace="fragments/employeeView :: employeeView"></form>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>

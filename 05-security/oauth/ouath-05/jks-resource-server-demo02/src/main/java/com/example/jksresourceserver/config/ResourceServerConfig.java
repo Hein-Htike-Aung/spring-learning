@@ -1,0 +1,21 @@
+package com.example.jksresourceserver.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+
+@Configuration
+@EnableResourceServer
+public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+
+}
+
+
+// curl -H "Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzgyMzM3MzIsInVzZXJfbmFtZSI6InhpYW90aW5nIiwiYXV0aG9yaXRpZXMiOlsicmVhZCJdLCJqdGkiOiJlMWIxODFkZS1hZmNiLTRjZmEtOGYzMC04MDJiYTgzZjRiMTIiLCJjbGllbnRfaWQiOiJjbGllbnQiLCJzY29wZSI6WyJyZWFkIl19.B6HJEWL0j9bH2vA9Yh6OxcB0g7p9hsjMiTBQS3AlgdPM4asCaTmtT0CAXwqTjtyWWho6k3NazAHp614gqXC8Y6sqbPnqTU2CqEGXXDYA29BxE7TQVd5-xQEWPYJq9TxsKgLhBghoZZbBNw6Fdv926_zHk7Yukiw0qw8YpzYXI33AtWa6xgca9770mJTWbi1pMLEySd3VBAOEz3QKcTAQBAwvoFFr1GhV5U7o9QE87lvxaEqmZfJnkEEetrrf4UUh4Xz2pV_c_0iIGO_VCiZHTmoGw5glX7U0v87wgf6zpV5-fVrBACRhjknmpmfUMuFe0XSE80lfAmKlIdU6cvYRxA" http://localhost:9090/hello

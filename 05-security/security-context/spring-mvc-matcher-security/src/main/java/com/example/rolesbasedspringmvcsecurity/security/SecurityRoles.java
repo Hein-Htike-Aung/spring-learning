@@ -1,0 +1,32 @@
+package com.example.rolesbasedspringmvcsecurity.security;
+
+public interface SecurityRoles {
+
+    String ROLE_PREFIX = "ROLE_";
+
+    String SUPER_ADMIN = "SUPER_ADMIN";
+
+    String ALL_VIEWS = "ALL_VIEWS";   // List, Details Info
+    String ALL_CREATES = "ALL_CREATES"; // Create
+    String ALL_DELETES = "ALL_DELETES"; // Delete
+
+    String CUSTOMERS_ADMIN = "CUSTOMERS_ADMIN";
+    String CUSTOMERS_VIEW = "CUSTOMERS_VIEW"; // Details Info
+    String CUSTOMERS_CREATE = "CUSTOMERS_CREATE";
+    String CUSTOMERS_DELETE = "CUSTOMERS_DELETE";
+    String CUSTOMERS_PAG_VIEW = "CUSTOMERS_PAG_VIEW"; // List
+
+    String DEPARTMENTS_ADMIN = "DEPARTMENTS_ADMIN";
+    String DEPARTMENTS_VIEW = "DEPARTMENTS_VIEW";
+    String DEPARTMENTS_CREATE = "DEPARTMENTS_CREATE";
+    String DEPARTMENTS_DELETE = "DEPARTMENTS_DELETE";
+    String DEPARTMENTS_PAG_VIEW = "DEPARTMENTS_PAG_VIEW";
+
+    String EMPLOYEES_ADMIN = "EMPLOYEES_ADMIN";
+    String EMPLOYEES_VIEW = "EMPLOYEES_VIEW";
+    String EMPLOYEES_CREATE = "EMPLOYEES_CREATE";
+    String EMPLOYEES_DELETE = "EMPLOYEES_DELETE";
+    String EMPLOYEES_PAG_VIEW = "EMPLOYEES_PAG_VIEW";
+
+
+}

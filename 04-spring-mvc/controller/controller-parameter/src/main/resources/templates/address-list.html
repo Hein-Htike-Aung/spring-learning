@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts :: layout(~{::main})}">
+
+<body>
+
+<main role="main">
+
+    <div class="bg-light mt-5 py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Address List</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" th:if="${addresses.isEmpty()}">
+                    <div class="alert alert-danger" role="alert">
+                        No Address defined yet!!!
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4" th:each="address : ${addresses}">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="card-text">
+                                FirstName: <span th:text="${address.firstName}"></span><br>
+                                LastName: <span th:text="${address.lastName}"></span><br>
+                                AddressName: <span th:text="${address.addressName}"></span><br>
+                                Country: <span th:text="${address.country}"></span><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="#" th:href="@{/sessionAttributes02/person}" class="btn btn-primary">Add New Address</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>

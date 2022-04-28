@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="address-display">
+
+    <div class="role">
+        <div class="col-md-12">
+            <div th:object="${address}">
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label>FirstName</label>
+                        <input type="text" class="form-control" id="firstName" readonly th:value="*{firstName}">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>lastName</label>
+                        <input type="text" class="form-control" id="lastName" readonly th:value="*{lastName}">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    <textarea type="text" class="form-control" id="addressName" readonly th:text="*{addressName}"/>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control" id="country" readonly th:value="*{country}">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="@{/modelAttribute}">Go Back</a>
+    </div>
+</div>
+
+</body>
+</html>

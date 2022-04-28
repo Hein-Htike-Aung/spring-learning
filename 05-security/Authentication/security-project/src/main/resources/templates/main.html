@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Products</title>
+</head>
+<body>
+
+<h2 th:text="'Hello, ' + ${username} + ' !' "></h2>
+
+<p><a th:href="@{/logout}">Log out</a></p>
+
+<h2>Products</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${products.isEmpty()}">
+        <td colspan="2">No Products...</td>
+    </tr>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.getName()}"></td>
+        <td th:text="${product.getPrice() + ' ' + product.getCurrency()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

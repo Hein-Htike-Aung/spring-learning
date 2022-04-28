@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="springBean01" class="com.hha.xml.context.beans.SpringBeans01">
+        <constructor-arg ref="springBean02"/>
+        <constructor-arg ref="springBean03"/>
+    </bean>
+
+    <bean id="springBean02" class="com.hha.xml.context.beans.SpringBeans02"></bean>
+
+    <bean id="springBean03" class="com.hha.xml.context.beans.SpringBeans03"></bean>
+
+
+</beans>

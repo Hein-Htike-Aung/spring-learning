@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="article-form">
+
+    <div class="row">
+        <div class="col">
+            <form action="#" th:action="@{/save-article}" th:object="${newArticle}" method="post">
+
+                <h3>Post Article</h3>
+
+                <div class="form-group mb-2">
+                    <lable>Title</lable>
+                    <input type="text" class="form-control" th:field="*{title}" placeholder="Article Title">
+                </div>
+
+                <div class="form-group mb-2">
+                    <lable>Body</lable>
+                    <textarea type="text" class="form-control" th:field="*{body}" placeholder="Article Content"/>
+                </div>
+
+                <input type="submit" value="Submit" class="btn btn-success mt-3">
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+==========generate hhs.jks file================
+
+keytool -genkeypair -alias hha -keyalg RSA -keypass hha123 -keystore hha.jks -storepass hha123
+
+==========generate public key====================
+keytool -list -rfc --keystore hha.jks | openssl x509 -inform pem -pubkey

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<table th:fragment="employeesTabble" class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>Cubicle No</th>
+        <th>View</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.firstName}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.phoneNumber}"></td>
+        <td th:text="${employee.address}"></td>
+        <td th:text="${employee.cubicleNo}"></td>
+        <td>
+            <a href="#" th:href="@{'/employees/view/'+ ${employee.id}}" type="button" class="btn btn-outline-danger">View</a>
+        </td>
+        <td>
+            <a href="#" th:href="@{'/employees/delete/'+ ${employee.id}}" type="button" class="btn btn-outline-danger">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>

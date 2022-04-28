@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts :: layout(~{::main})}">
+
+<body>
+
+<main role="main">
+
+    <div class="div mt-5 py-5 bg-light container">
+        <div th:replace="~{fragments/address-form :: address-form}"></div>
+    </div>
+
+</main>
+
+</body>
+</html>

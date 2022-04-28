@@ -1,0 +1,37 @@
+package com.example.rolesbasedspringmvcsecurity.security;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.access.AccessDecisionManager;
+import org.springframework.security.access.hierarchicalroles.RoleHierarchy;
+import org.springframework.security.access.vote.AffirmativeBased;
+import org.springframework.security.access.vote.RoleHierarchyVoter;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
+
+
+/*
+ * For Method Security
+ * */
+@Configuration
+@EnableGlobalMethodSecurity(
+        securedEnabled = true,
+        jsr250Enabled = true,
+        prePostEnabled = true
+)
+public class GlobalMethodSecurityConfig extends GlobalMethodSecurityConfiguration {
+
+    @Autowired
+    private RoleHierarchy roleHierarchy;
+
+    // Create AccessDecisionManager using AccessDecisionManager
+    @Override
+    protected AccessDecisionManager accessDecisionManager() {
+
+        AffirmativeBased affirmativeBased = (AffirmativeBased) super.accessDecisionManager();
+        affirmativeBased.getDecisionVoters().add(new RoleHierarchyVoter(roleHierarchy));
+        return affirmativeBased;
+    }
+
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<nav th:fragment="navigation" class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <a href="#" class="navbar-brand" th:href="@{/home}">Spring rest</a>
+
+    <div class="collapse navbar-collapse">
+
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+                <a href="#" th:href="@{/home}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" th:href="@{/customers}" class="nav-link">Customers</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+</body>
+</html>

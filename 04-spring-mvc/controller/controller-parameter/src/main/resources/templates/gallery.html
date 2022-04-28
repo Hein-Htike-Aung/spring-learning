@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts:: layout(~{::main})}">
+
+<body>
+
+<main role="main">
+
+    <div class="py-5 bg-light">
+        <div class="container">
+
+            <div th:replace="~{fragments/image-list :: images-list}"></div>
+
+            <div th:replace="~{fragments/image-upload :: images-upload}"></div>
+
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main :: layout(~{::main})}">
+
+<body>
+
+<main role="main">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 py-4">
+                <form action="#" th:replace="~{fragments/customerView :: customerForm}"></form>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>

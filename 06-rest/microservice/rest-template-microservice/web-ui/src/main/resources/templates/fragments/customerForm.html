@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<form action="#" th:fragment="customerForm" method="post" th:action="@{/customers/create}" th:object="${customer}">
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label>Customer Name</label>
+            <input type="text" th:field="*{customerName}" class="form-control">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1">
+            <a href="#" th:href="@{/customers}" class="btn btn-outline-secondary">Back</a>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" th:href="@{/customers/create}" class="btn btn-primary">Add Customer</button>
+        </div>
+    </div>
+
+</form>
+
+</body>
+</html>

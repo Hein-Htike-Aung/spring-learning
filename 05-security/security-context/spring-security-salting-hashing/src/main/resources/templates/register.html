@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main :: layout(~{::main})}">
+<body>
+
+<main role="main">
+
+    <div class="container">
+        <div class="row d-flex justify-content-center mt-4">
+
+            <div class="col-md-4 py-4">
+                <h2>Registration Page</h2>
+
+
+                <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" name="username" id="username" class="form-control" placeholder="Username"
+                               th:filed="*{username}" th:classappend="${#fields.hasErrors('username')} ? 'is-invalid'"
+                               required>
+                        <div class="invalid-feedback" th:errors="*{username}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password"
+                               th:filed="*{password}" th:classappend="${#fields.hasErrors('password')} ? 'is-invalid'"
+                               required>
+                        <div class="invalid-feedback" th:errors="*{password}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Repeated Password</label>
+                        <input type="password" name="repeatedPassword" id="repeatedPassword" class="form-control"
+                               placeholder="repeatedPassword"
+                               th:filed="*{repeatedPassword}"
+                               th:classappend="${#fields.hasErrors('repeatedPassword')} ? 'is-invalid'"
+                               required>
+                        <div class="invalid-feedback" th:errors="*{repeatedPassword}"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>
